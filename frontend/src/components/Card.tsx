@@ -1,5 +1,3 @@
-import React from 'react'
-
 type Suit = '♠' | '♥' | '♦' | '♣'
 interface CardProps {
     rank: string

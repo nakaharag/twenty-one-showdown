@@ -13,7 +13,7 @@ describe('Game component (frontend)', () => {
     const apiUrl = 'http://localhost:4000';
 
     beforeEach(() => {
-        (global as any).fetch = undefined;
+        (globalThis as any).fetch = undefined;
         jest.clearAllMocks();
     });
 
@@ -33,7 +33,7 @@ describe('Game component (frontend)', () => {
             winner: null,
         };
 
-        (global as any).fetch = jest.fn().mockImplementation((url, opts) => {
+        (globalThis as any).fetch = jest.fn().mockImplementation((url, opts) => {
             if (url === `${apiUrl}/games` && opts?.method === 'POST') {
                 return Promise.resolve({
                     ok: true,
@@ -81,7 +81,7 @@ describe('Game component (frontend)', () => {
         };
 
         let callCount = 0;
-        (global as any).fetch = jest.fn().mockImplementation((url, opts) => {
+        (globalThis as any).fetch = jest.fn().mockImplementation((url, opts) => {
             if (url === `${apiUrl}/games` && opts?.method === 'POST') {
                 callCount++;
                 return Promise.resolve({
@@ -129,7 +129,7 @@ describe('Game component (frontend)', () => {
             winner: 'dealer',
         };
 
-        (global as any).fetch = jest.fn().mockResolvedValue({
+        (globalThis as any).fetch = jest.fn().mockResolvedValue({
             ok: true,
             json: () => Promise.resolve(finalState),
         } as Response);

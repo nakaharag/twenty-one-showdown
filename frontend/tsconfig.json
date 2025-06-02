@@ -1,6 +1,4 @@
 {
-  "files": [],
-  "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }],
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
@@ -15,11 +13,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "types": ["vite/client", "jest", "@testing-library/jest-dom"]
   },
   "include": [
     "src",
     "tests"
   ],
-"exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
