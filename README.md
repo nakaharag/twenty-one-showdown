@@ -27,7 +27,7 @@ A fully-featured online Blackjack (Twenty-One) game, built with a modern fronten
 
 ## Live Demo
 
-https://nakahara.pro/twenty-one-showdown
+https://twenty-one-showdown-1.onrender.com/
 
 ---
 
@@ -152,6 +152,7 @@ npm install
 
 # Install frontend dependencies
 cd ../frontend
+cp .env.example .env 
 npm install
 ```
 
